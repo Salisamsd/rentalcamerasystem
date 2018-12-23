@@ -1,0 +1,93 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title> แก้ไขข้อมูลส่วนตัว</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing..."
+    >
+    </ion-refresher-content>
+  </ion-refresher>
+  <ion-list>
+    <ion-item>
+      <ion-label floating>ชื่อ</ion-label>
+      <ion-input
+        id="newname"
+        type="text"
+        name="newname"
+        #newname
+        [(ngModel)]="name"
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>นามสกุล</ion-label>
+      <ion-input
+        id="newlastname"
+        type="text"
+        name="newlastname"
+        #newlastname
+        [(ngModel)]="lastname"
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>วันเดือนปีเกิด</ion-label>
+      <ion-input
+        id="newbdate"
+        type="date"
+        name="newbdate"
+        #newbdate
+        [(ngModel)]="bdate"
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>หมายเลขบัตรประชาชน</ion-label>
+      <ion-input
+        id="newnationID"
+        type="number"
+        name="newnationID"
+        #newnationID
+        [(ngModel)]="nationID"
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>ที่อยู่</ion-label>
+      <ion-input
+        id="newaddress"
+        type="textarea"
+        name="newaddress"
+        #newaddress
+        [(ngModel)]="address"
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>telephone</ion-label>
+      <ion-input
+        id="newtelephone"
+        type="text"
+        name="newtelephone"
+        #newtelephone
+        [(ngModel)]="telephone"
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>email</ion-label>
+      <ion-input
+        id="newemail"
+        type="text"
+        name="newemail"
+        #newemail
+        [(ngModel)]="email"
+      ></ion-input>
+    </ion-item>
+  </ion-list>
+  <div>
+    <button ion-button color="energy" round block (click)="Edit()">
+      Update
+    </button>
+  </div>
+</ion-content>

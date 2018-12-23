@@ -1,0 +1,66 @@
+<!--
+  Generated template for the DslrPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar no-border-bottom color='trant' >
+    <ion-title>
+      Accessories
+    </ion-title>
+  </ion-navbar>
+
+  <ion-toolbar no-border-top color='trant'>
+    <ion-segment [(ngModel)]="choice" >
+      <ion-segment-button value="body" >
+        Accessory
+      </ion-segment-button>
+      <ion-segment-button value="bodylense">
+        Bettery
+      </ion-segment-button>
+      <ion-segment-button value="lense">
+        Memory Card
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content  padding class="getstart" >
+  <div [ngSwitch]="choice">
+    <ion-list *ngSwitchCase="'body'">
+        <ion-item *ngFor="let item of items" >
+  
+            <ion-card color='energy' (click)="detail(item)">
+                <img src="http://manocamera.com/itempic/{{item.img1}}"/>
+                <ion-card-content >
+                    <b>{{item.item_name}}</b>
+                </ion-card-content>
+              </ion-card>
+            </ion-item>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'bodylense'">
+        <ion-item *ngFor="let item of items1" >
+            <ion-card color='energy' (click)="detail(item)">
+                <img src="http://manocamera.com/itempic/{{item.img1}}"/>
+                <ion-card-content >
+                  <b>{{item.item_name}}</b>
+                </ion-card-content>
+              </ion-card>
+            </ion-item>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'lense'">
+        <ion-item *ngFor="let item of items2" (click)="detail(item)" >
+            <ion-card color='energy'>
+                <img src="http://manocamera.com/itempic/{{item.img1}}"/>
+                <ion-card-content >
+                    <b>{{item.item_name}}</b>
+                </ion-card-content>
+              </ion-card>
+            </ion-item>
+    </ion-list>
+   
+  </div>
+</ion-content>

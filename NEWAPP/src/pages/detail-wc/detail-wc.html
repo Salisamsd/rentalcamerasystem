@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>{{ item.item_name }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <h2>
+        <b>หมายเลข : {{ item.rentID }}</b>
+      </h2>
+      <h3>
+        <b>การเช่า : {{ item.name }}</b>
+      </h3>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-item>
+      <ion-thumbnail item-left>
+        <img src="http://manocamera.com/itempic/{{ item.img1 }}" />
+      </ion-thumbnail>
+
+      <h3>
+        <b>{{ item.item_name }}</b>
+      </h3>
+      <p>
+        <b>วันที่รับ : {{ item.sdate | date: "dd/MM/yyyy" }}</b>
+      </p>
+      <p>
+        <b>วันที่คืน : {{ item.edate | date: "dd/MM/yyyy" }}</b>
+      </p>
+
+      <b>ราคาเช่าทั้งหมด : {{ item.total }} บาท</b>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-item>
+      <h2><b>สิ่งที่ให้ไปด้วย</b></h2>
+      <pre style="font-size: 15px; font-weight: bold; ">{{ item.ft_name }}</pre>
+    </ion-item>
+  </ion-list>
+  <ion-item>
+    <h2>
+      <b>สถานะ : </b
+      ><b style="color: red; font-weight: bold; ">{{ item.statusR_name }}</b>
+    </h2>
+    <br />
+  </ion-item>
+</ion-content>

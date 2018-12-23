@@ -1,0 +1,106 @@
+<ion-header>
+  <ion-navbar no-border-bottom color="trant">
+    <ion-title align="center"> รายการเช่าของฉัน </ion-title>
+  </ion-navbar>
+
+  <ion-toolbar no-border-top color="trant">
+    <ion-segment [(ngModel)]="choice">
+      <ion-segment-button value="now"> รายการเช่าปัจจุบัน </ion-segment-button>
+      <ion-segment-button value="success">
+        รายการเช่าสำเร็จ
+      </ion-segment-button>
+      <ion-segment-button value="cancel"> ยกเลิก </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="getstart">
+  <div [ngSwitch]="choice">
+    <ion-list *ngSwitchCase="'now'">
+      <ion-item *ngFor="let item of items">
+        <ion-card padding (click)="detail(item)">
+          <H2
+            ><B>{{ item.rentID }}</B></H2
+          >
+          <p>{{ item.item_name }}</p>
+          <ion-row>
+            <ion-col span="2" width="20">
+              <img src="http://manocamera.com/itempic/{{ item.img1 }}" />
+            </ion-col>
+            <ion-col>
+              <br />
+              <br />สถานะ : {{ item.statusR_name }} <br />
+              <br />
+              <span
+                >อัปเดตข้อมูล ล่าสุด:{{
+                  item.dayRent | date: "dd/MM/yyyy "
+                }}</span
+              ><br />
+            </ion-col>
+          </ion-row>
+        </ion-card>
+      </ion-item>
+    </ion-list>
+    <ion-list *ngSwitchCase="'success'">
+      <ion-item *ngFor="let item of items1">
+        <ion-card padding (click)="detailWC(item)">
+          <H2
+            ><B>{{ item.rentID }}</B></H2
+          >
+          <p>{{ item.item_name }}</p>
+          <ion-row>
+            <ion-col span="2" width="20">
+              <img src="http://manocamera.com/itempic/{{ item.img1 }}" />
+            </ion-col>
+            <ion-col>
+              <br />
+              <br />สถานะ : {{ item.statusR_name }} <br />
+              <br />
+              <span
+                >อัปเดตข้อมูล ล่าสุด:{{
+                  item.dayRent | date: "dd/MM/yyyy "
+                }}</span
+              ><br />
+            </ion-col>
+          </ion-row>
+        </ion-card>
+      </ion-item>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'cancel'">
+      <ion-item *ngFor="let item of items2">
+        <ion-card padding (click)="detailWC(item)">
+          <H2
+            ><B>{{ item.rentID }}</B></H2
+          >
+          <p>{{ item.item_name }}</p>
+          <ion-row>
+            <ion-col span="2" width="20">
+              <img src="http://manocamera.com/itempic/{{ item.img1 }}" />
+            </ion-col>
+            <ion-col>
+              <br />
+              <br />สถานะ : {{ item.statusR_name }} <br />
+              <br />
+              <span
+                >อัปเดตข้อมูล ล่าสุด:{{
+                  item.dayRent | date: "dd/MM/yyyy "
+                }}</span
+              ><br />
+            </ion-col>
+          </ion-row>
+        </ion-card>
+      </ion-item>
+    </ion-list>
+
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content
+        pullingIcon="arrow-dropdown"
+        pullingText="Pull to refresh"
+        refreshingSpinner="circles"
+        refreshingText="Refreshing..."
+      >
+      </ion-refresher-content>
+    </ion-refresher>
+  </div>
+</ion-content>

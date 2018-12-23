@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title> เปลี่ยนรหัสผ่าน </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-label>&nbsp;&nbsp;&nbsp;&nbsp;รหัสผ่านใหม่</ion-label>
+    <ion-item>
+      <ion-input
+        id="newPass"
+        type="password"
+        name="newPass"
+        #newPass
+      ></ion-input>
+    </ion-item>
+    <ion-label>&nbsp;&nbsp;&nbsp;&nbsp;ยืนยันรหัสผ่านอีกครั้ง</ion-label>
+    <ion-item>
+      <ion-input
+        id="conPass"
+        type="password"
+        name="conPass"
+        #conPass
+      ></ion-input>
+    </ion-item>
+
+    <button ion-button round color="energy" inline block (click)="changePass()">
+      ยืนยัน
+    </button>
+  </ion-list>
+</ion-content>

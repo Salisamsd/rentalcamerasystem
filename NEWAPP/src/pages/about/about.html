@@ -1,0 +1,67 @@
+<ion-content padding class="tutorial-page">
+  <accordion title="เงื่อนไขการเช่า">
+    <ion-list>
+      <ion-item>
+        <label> 1.ผู้เช่าจะต้องมีอายุ 18 ปีบริบูรณ์ขึ้นไป <br /> </label>
+        <label> 2.ผู้เช่าต้องมารับที่หน้าร้านด้วยตัวเองทุกครั้ง<br /> </label>
+        <label> 3.ต้องชำระค่าเช่าทั้งหมดในวันรับอุปกรณ์<br /> </label>
+        <label> 4.วางวงเงินประกันในวันรับอุปกรณ์ทั้งหมด<br /> </label>
+        <label>
+          5.คืนล่าช้า<br />
+          &nbsp;&nbsp;&nbsp;คิดค่าปรับวันละ 5 เท่าของราคาเช่าต่อวัน<br />
+        </label>
+        <label color="danger">
+          5.กรณีไม่มารับในวันที่นัดรับ<br />&nbsp;&nbsp;&nbsp;จะทำการยกเลิกการเช่า<br />
+        </label>
+        <b style="color: red; font-weight: bold; font-size: 15px; "
+          >&nbsp;ขอสงวนสิทธิให้เช่าหากไม่เป็นไปตามเงื่อนไข</b
+        >
+      </ion-item>
+    </ion-list>
+  </accordion>
+  <accordion title="เงินประกัน">
+    <ion-list>
+      <ion-item>
+        <pre style="color: red; font-weight: bold; font-size: 15px; ">
+ใช้ เงินสด หรือ โอนเงินเข้าบัญชีธนาคาร</pre
+        >
+        <pre
+          style="font-weight: bold; font-size: 15px; "
+        ><b>* จะได้รับเงินประกันทั้งหมดในวันคืนอุปกรณ์</b> </pre>
+      </ion-item>
+    </ion-list>
+  </accordion>
+  <accordion title="สิ่งที่ต้องใช้">
+    <ion-list>
+      <ion-item>
+        <pre style="color: red; font-weight: bold; font-size: 15px; ">
+ในวันที่รับ   </pre
+        >
+        <pre
+          style="font-weight: bold; font-size: 15px; "
+        ><b>- บัตรประชาชนตัวจริง</b> </pre>
+        <pre
+          style="font-weight: bold; font-size: 15px; "
+        ><b>- หลักประกัน</b> </pre>
+        <pre style="color: red; font-weight: bold; font-size: 15px; ">
+สำหรับรูปแบบที่ 1</pre
+        >
+        <pre
+          style="font-weight: bold; font-size: 15px; "
+        ><b>- สำเนาบัตรประชาชน</b> </pre>
+        <pre
+          style="font-weight: bold; font-size: 15px; "
+        ><b>- สำเนาเอกสารยืนยันตัวตน</b> </pre>
+        <pre
+          style="font-weight: bold; font-size: 15px; "
+        ><b>เช่น ใบแจ้งค่าน้ำหรือค่าไฟ,ใบแจ้งอินเทอร์เน็ต,
+ใบแจ้งค่าค่าบัตรเครดิต,ใบแจ้งประกันชีวิต</b> </pre>
+        <pre style="color: red; font-weight: bold; font-size: 15px;">
+ไม่ยืนยันเอกสารภายใน 24 ชม. 
+ขอสงวสิทธิ์การให้เช่า </pre
+        >
+      </ion-item>
+    </ion-list>
+  </accordion>
+  <button ion-button full round (click)="checkdetail()">รูปแบบการเช่า</button>
+</ion-content>

@@ -1,0 +1,113 @@
+<!--
+  Generated template for the AddCartPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar> <ion-title> รายการเช่า</ion-title> </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-thumbnail item-left>
+        <img src="http://manocamera.com/itempic/{{ item.img1 }}" />
+      </ion-thumbnail>
+      <h3>
+        <b>{{ item.item_name }}</b>
+      </h3>
+      <p>
+        <b>วันที่รับ : {{ item.sdate | date: "dd/MM/yyyy" }}</b>
+      </p>
+      <p>
+        <b>วันที่คืน : {{ item.edate | date: "dd/MM/yyyy" }}</b>
+      </p>
+      <b>ราคาเช่าทั้งหมด : {{ item.total }} บาท</b>
+    </ion-item>
+    <ion-label style="display: none" color="danger"
+      ><b
+        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;กรุณากรอกเลขบัตรประชาชน 13 หลัก
+        เพื่อยืนยันการเช่า
+      </b></ion-label
+    >
+    <!--<p><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;กรุณากรอกประชาชน 13 หลัก เพื่อยืนยันการเช่า</b></p>-->
+    <ion-item style="display: none">
+      <ion-label><b>บัตรประชน</b></ion-label>
+      <ion-input
+        type="number"
+        placeholder="กรุณาตรวจสอบให้ครบถ้วน"
+        name="personID"
+        #personID
+        [value]="username"
+      ></ion-input>
+    </ion-item>
+
+    <ion-label color="danger"
+      ><b
+        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;วงเงินประกันสำหรับการเช่า</b
+      ></ion-label
+    >
+    <p>
+      <b
+        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;รูปแบบการเช่าที่ 1 :
+        {{ item.deposit_1 }} บาท</b
+      >
+    </p>
+    <p>
+      <b
+        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;รูปแบบการเช่าที่ 2 :
+        {{ item.deposit_2 }} บาท &nbsp;&nbsp;
+        <ion-icon name="paper" color="green" (click)="checkdetail()"
+          >&nbsp;&nbsp;Click รูปแบบการเช่า</ion-icon
+        ></b
+      >
+    </p>
+    <hr />
+    <p>
+      <b
+        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ท่านจะต้องนำเงินมาวางเงินประกันตามรูปแบบการเช่าที่เลือก</b
+      >
+    </p>
+    <p>
+      <b
+        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ในรับอุปกรณ์และชำระค่าเช่าทั้งหมดจำนวน
+        {{ item.total }} บาท
+      </b>
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**รับเงินวงประกันคืน
+      ในวันที่คืนอุปกรณ์เท่านั้น**
+    </p>
+    
+    <ion-item>
+      <ion-label><b>รูปแบบการเช่า</b></ion-label>
+      <ion-select [(ngModel)]="optionRent">
+        <ion-option value="1">แบบที่ 1 ยื่นเอกสาร</ion-option>
+        <ion-option value="2">แบบที่ 2 ไม่ยื่นเอกสาร</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-list>
+      <ion-item>
+        <ion-label
+          ><button ion-button color="danger" (click)="checkdetail()" clear>
+            <u>โปรดอ่านและยอมรับเงื่อนไข</u>
+          </button>
+        </ion-label>
+        <ion-checkbox [(ngModel)]="function"> </ion-checkbox>
+      </ion-item>
+    </ion-list>
+    <button
+      ion-button
+      icon-left
+      round
+      block
+      color="danger"
+      (click)="abbTocart()"
+    >
+      <b>ยืนยันการเช่า </b>
+    </button>
+  </ion-list>
+
+</ion-content>

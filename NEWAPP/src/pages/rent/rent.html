@@ -1,0 +1,18 @@
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <img src="http://manocamera.com/itempic/{{ item.img1 }}" />
+      <h3>
+        <b>{{ item.item_name }}</b>
+      </h3>
+      <p>
+        <b>วันที่รับ : {{ item.sdate }}</b>
+      </p>
+      <p>
+        <b>วันที่คืน : {{ item.edate }}</b>
+      </p>
+      <b>ราคาเช่าต่อวัน : {{ item.item_priceperday }} บาท</b>
+      <b>ราคาเช่าต่อวัน : {{ item.diffrentDay * item.daysDiff }} บาท</b><br />
+    </ion-item>
+  </ion-list>
+</ion-content>

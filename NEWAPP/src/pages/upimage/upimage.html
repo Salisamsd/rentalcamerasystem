@@ -1,0 +1,112 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title> อัพโหลดเอกสาร </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing..."
+    >
+    </ion-refresher-content>
+  </ion-refresher>
+  <b style="color: red; font-weight: bold; font-size: 15px;">
+    &nbsp;&nbsp; &nbsp; &nbsp;----ไม่ยืนยันเอกสารภายใน 24 ชม. หลังจากเช่าแบบที่
+    1----
+  </b>
+  <b style="color: red; font-weight: bold; font-size: 15px;">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--- จะยกเลิกการเช่าทันที
+    เพื่อรักษาสิทธิ์แก่ลูกค้าท่านอื่น ---
+  </b>
+  <ion-list>
+    <ion-item>
+      <ion-thumbnail item-left>
+        <ion-item *ngFor="let item of items">
+          <img src="http://www.manocamera.com/userUpload/{{ item.img1 }}"
+        /></ion-item>
+      </ion-thumbnail>
+
+      <ion-item *ngFor="let item of items">
+        <label>1.สำเนาบัตรประชาชน</label><br />
+        <label id="fld_8768091Label">สถานะ : {{ item.status }}</label>
+      </ion-item>
+      <button ion-button (click)="getImage()" color="secondary" icon-only small>
+        <ion-icon name="camera"></ion-icon>
+      </button>
+      <button ion-button (click)="uploadImage()" color="danger" small>
+        upload
+      </button>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-item>
+      <ion-thumbnail item-left>
+        <ion-item *ngFor="let item of items">
+          <img src="http://www.manocamera.com/userUpload/{{ item.img2 }}"
+        /></ion-item>
+      </ion-thumbnail>
+
+      <ion-item *ngFor="let item of items">
+        <label>2.สำเนาทะเบียนบ้าน</label><br />
+        <label id="fld_8768091Label">สถานะ : {{ item.status2 }}</label>
+      </ion-item>
+      <!-- <button ion-button (click)="takePhoto()" color="danger" icon-only large>
+                      <ion-icon name="camera"></ion-icon>
+                    </button> -->
+      <button ion-button (click)="getImage()" color="secondary" icon-only small>
+        <ion-icon name="camera"></ion-icon>
+      </button>
+      <button ion-button (click)="uploadImage2()" color="danger" small>
+        upload
+      </button>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-item>
+      <ion-thumbnail item-left>
+        <ion-item *ngFor="let item of items">
+          <img src="http://www.manocamera.com/userUpload/{{ item.img3 }}"
+        /></ion-item>
+      </ion-thumbnail>
+
+      <ion-item *ngFor="let item of items">
+        <label>3.สำเนาเอกสารยืนยันที่อยู่ปัจจุบัน</label><br />
+        <label id="fld_8768091Label">สถานะ : {{ item.status3 }}</label>
+      </ion-item>
+      <!-- <button ion-button (click)="takePhoto()" color="danger" icon-only large>
+                    <ion-icon name="camera"></ion-icon>
+                  </button> -->
+      <button ion-button (click)="getImage()" color="secondary" icon-only small>
+        <ion-icon name="camera"></ion-icon>
+      </button>
+      <button ion-button (click)="uploadImage3()" color="danger" small>
+        upload
+      </button>
+    </ion-item>
+  </ion-list>
+
+  <accordion *ngFor="let item of items1" [title]="item.name">
+    <ion-list>
+      <ion-item>
+        <label>{{ item.information }}</label
+        ><br />
+        <label>{{ item.price1 }}</label
+        ><br />
+        <label>{{ item.price2 }}</label
+        ><br />
+        <label>{{ item.price3 }}</label
+        ><br />
+        <label>{{ item.price4 }}</label
+        ><br />
+      </ion-item>
+    </ion-list>
+    <ion-list>
+      <ion-item> <img src="{{ item.price }}" /> </ion-item>
+    </ion-list>
+    <ion-list> </ion-list>
+  </accordion>
+</ion-content>

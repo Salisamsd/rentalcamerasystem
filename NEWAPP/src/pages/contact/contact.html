@@ -1,0 +1,27 @@
+<ion-content padding>
+   
+    
+     <ion-list inset>
+        <button ion-item *ngFor="let item of items" (click)="editPost(item)">
+          <img src="http://manocamera.com/img/iconfinder_Edit_1891026.png" />&nbsp;&nbsp;&nbsp;&nbsp;แก้ไขข้อมูลส่วนตัว
+        </button> 
+      </ion-list>
+
+      <ion-list inset>
+          <button ion-item *ngFor="let item of items" (click)="change(item)">
+            <img src="http://manocamera.com/img/iconfinder_Lock_1891014.png" />&nbsp;&nbsp;&nbsp;&nbsp;เปลี่ยนรหัสผ่าน
+          </button> 
+        </ion-list>
+        
+      <ion-list inset>
+        <button ion-item *ngFor="let item of items" (click)="upPost(item)">
+          <img src="http://manocamera.com/img/iconfinder_Folder_1891015.png" />&nbsp;&nbsp;&nbsp;&nbsp;อัพโหลดเอกสาร
+        </button> 
+        
+      </ion-list>
+        <ion-list inset>
+            <button ion-item *ngFor="let item of items" (click)="logout()">
+              <img src="http://manocamera.com/img/iconfinder_Edit_1891026.png" />&nbsp;&nbsp;&nbsp;&nbsp;ออกจากระบบ
+            </button> 
+          </ion-list>
+    </ion-content>
